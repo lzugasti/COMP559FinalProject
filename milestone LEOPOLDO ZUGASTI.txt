@@ -1,0 +1,11 @@
+THIS IS AN IDENTICAL SUBMISSION TO THE ONE I DID BEFORE BUT I COULDN'T GET FFMPEG TO WORK BEFORE THE DEADLINE SO I SUBMITTED AGAIN TO HAVE A VIDEO
+
+I've read all papers that I'm going to require to complete the project in its entirety (as long as I don't add more features).
+Graphical part and the "data structure" part (aka holding shape, voxel and world data) are completed
+I have currently fully implemented rigidbody collisions between the shapes built by voxels (without friction and collisions are approximated by 1 or 4 circles per voxel).
+I can fracture voxels if I specificy which bonds to break, however I must polish off bugs when it comes to explosions causing the fractures.
+Additionally I'd like to improve on optimization (currently doing n^2 checks for collisions) and the (inexistant) GUI.
+
+I've honestly done as much work as I think I could have done, I'd like to think I could grade myself 4/4.
+
+Video information: Each voxel is simulated by having either 1 or 4 or 8 circles of equal size, the video has 1 circle (You can see that the corners aren't actually colliding). I also click around to create new shapes.
