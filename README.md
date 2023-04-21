@@ -11,8 +11,9 @@ Requires:
 * freetype 2.12.1
 * glm 0.9.9
 
-**You must set an environment variable named GLM_INCLUDE_DIR to point to the installation of glm
-You must set an environment variable named THIRDPARTY_DIR to point to the other installations (freetype, glfw, glew)**
+**You must set an environment variable named GLM_INCLUDE_DIR to point to the installation of glm**
+
+**You must set an environment variable named THIRDPARTY_DIR to point to the other installations (freetype, glfw, glew)**
 
 ### 2. CMAKE
 Use CMAKE: create a new folder called build within the COMP559FinalProject directory and tell CMAKE to build there. Then configure and generate
