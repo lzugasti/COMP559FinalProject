@@ -109,7 +109,7 @@ public:
 	}
 	void applyImpulsesWithAngular(double h, std::vector<Shape*>* shapes, int width, int height)
 	{
-		double e = .3;
+		double e = .1;
 		bool hadCollisions = false;
 		int iterations = 0;
 		int maxIterations = 2;
@@ -164,7 +164,7 @@ public:
 							double r2dotn = glm::dot(r2perps[k], n);
 
 							double J = -(1 + e) * glm::dot(relV, n) / (glm::dot(n, n) * (1 / m1 + 1 / m2) + ((r1dotn * r1dotn / shape1->inertia) + (r2dotn * r2dotn / shape2->inertia)));
-							impulses.push_back(J * n);
+							//impulses.push_back(J * n);
 							vec2 impulse = J * n;
 							shape1->v = shape1->v + (impulse / m1);
 							shape2->v = shape2->v - (impulse / m2);

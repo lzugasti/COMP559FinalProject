@@ -96,7 +96,7 @@ public:
                 for (Explosion* e : explosions)
                 {
                     double pressure = e->getPressureAt(p.x, p.y, time);
-                    l->threshold -= pressure;
+                    l->threshold -= glm::abs(pressure);
                 }
             }
         }
@@ -240,7 +240,7 @@ public:
     bool useCollisions = true;
     bool displayLinks = true;
     double peak = 2500;
-    double T = 0.1;
+    double T = 0.7;
     double b = 12;
     double speed = 200;
     int decay = 2;

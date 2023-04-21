@@ -404,7 +404,8 @@ public:
             double dSquared = glm::dot(v->pRelative, v->pRelative);
             //i += (v->mass / 12.0) * (2*(2*voxelRadius) * (2*voxelRadius)) + v->mass * dSquared;
             //i += (v->mass / 12.0) * (2*(2*voxelRadius) * (2*voxelRadius)) + v->mass * dSquared;
-            i += 0.5 * v->mass * voxelRadius * voxelRadius + v->mass * dSquared;
+            //i += 0.5 * v->mass * voxelRadius * voxelRadius + v->mass * dSquared;
+            i += v->mass * (voxelRadius * voxelRadius / 6 + dSquared);
             //i += 0.5 * v->mass * voxelRadius * voxelRadius + v->mass * dSquared;
             //i += 0.5 * v->mass * voxelRadius * voxelRadius;
             //i += 0.5 * v->mass * voxelRadius * voxelRadius *glm::max(1.0, glm::sqrt(glm::dot(v->pRelative, v->pRelative)));
