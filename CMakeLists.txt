@@ -39,15 +39,15 @@ IF(NOT GLM_INCLUDE_DIR)
 ENDIF()
 INCLUDE_DIRECTORIES(${GLM_INCLUDE_DIR})
 
-SET(EIGEN_DIR $ENV{THIRDPARTY_DIR}/eigen-3.4.0)
-include_directories(${EIGEN_DIR})
+# SET(EIGEN_DIR $ENV{THIRDPARTY_DIR}/eigen-3.4.0)
+# include_directories(${EIGEN_DIR})
 
-SET(RAPIDXML_DIR $ENV{THIRDPARTY_DIR}/rapidxml-1.13)
-include_directories(${RAPIDXML_DIR})
+# SET(RAPIDXML_DIR $ENV{THIRDPARTY_DIR}/rapidxml-1.13)
+# include_directories(${RAPIDXML_DIR})
 
 
-SET(RAPIDXML_DIR $ENV{THIRDPARTY_DIR}/rapidxml-1.13)
-include_directories(${RAPIDXML_DIR})
+# SET(RAPIDXML_DIR $ENV{THIRDPARTY_DIR}/rapidxml-1.13)
+# include_directories(${RAPIDXML_DIR})
 
 SET(FREETYPE_DIR $ENV{THIRDPARTY_DIR}/freetype-2.12.1)
 IF(NOT FREETYPE_DIR)
