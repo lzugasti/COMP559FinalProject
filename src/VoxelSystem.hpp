@@ -12,10 +12,6 @@
 
 #include "GLSL.h"
 
-#include "Particle.hpp"
-#include "Spring.hpp"
-#include "BendingSpring.hpp"
-#include "RobustCCD.hpp"
 #include "Voxel.hpp"
 #include "CollisonHandler.hpp"
 #include "Explosion.hpp"
@@ -243,7 +239,7 @@ public:
     double T = 0.7;
     double b = 12;
     double speed = 200;
-    int decay = 2;
+    int decay = 3;
     int spawnType = 1;
     int rectangleWidth = 4;
     int rectangleHeight = 3;

@@ -25,16 +25,15 @@
 #include "Text.hpp"
 
 #include "VoxelSystem.hpp"
-#include "TestSystems.hpp"
-#include "SanityCheck.hpp"
-#include "RecordVideo.hpp"
+//#include "TestSystems.hpp"
+//#include "SanityCheck.hpp"
+//#include "RecordVideo.hpp"
 #include "Voxel.hpp"
 
 using namespace std;
 
 VoxelSystem voxelSystem;
-SanityCheck sanityCheck;
-TestSystems* testSystems;
+
 bool run = false;
 bool sanity = true;
 float stepsize = 1.0f / 60.0f; // 60 Hz screen refresh
@@ -45,9 +44,6 @@ float maxDist = 150;
 float minDist = 50;
 float grabThresh = 10;
 
-// for grabbing particles
-Particle* p1 = NULL;
-Particle* p2 = NULL;
 float d1 = 0;
 float d2 = 0;
 
@@ -70,7 +66,6 @@ GLFWwindow* window; // Main application window
 string RES_DIR = ""; // Where data files live
 shared_ptr<Program> progIM; // immediate mode
 
-ImageRecorder imageRecorder;
 bool recordFrames = false; // toggled by keyboard
 bool recordFrame = false; // set to record when stepped in display
 
@@ -278,18 +273,6 @@ static void init() {
 	GLSL::checkError(GET_FILE_LINE);
 }
 
-/** draws a line from the given point to the given particle */
-void drawLineToParticle(double x, double y, Particle* p, double d) {
-	if (p == NULL) return;
-	if (d > maxDist) return;
-	double col = d < minDist ? 1 : (maxDist - d) / (maxDist - minDist);
-	glColor4d(1 - col, 0, col, 0.75f);
-	glBegin(GL_LINES);
-	glVertex2d(x, y);
-	glVertex2d(p->p.x, p->p.y);
-	glEnd();
-}
-
 void display() {
 	// set up projection for drawing in pixel units...
 
@@ -364,10 +347,6 @@ static void render() {
 	string text = ss.str();
 	RenderString(projection, modelview, 600, 50, 0.4, text);
 
-	if (recordFrame) {
-		recordFrame = false;
-		imageRecorder.writeCurrentFrameToFile(window);
-	}
 
 	GLSL::checkError(GET_FILE_LINE);
 }

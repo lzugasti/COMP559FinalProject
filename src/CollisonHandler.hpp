@@ -1,6 +1,4 @@
 #pragma once
-#include "Particle.hpp"
-#include "Spring.hpp"
 #include "Shape.hpp"
 
 class CollisionHandler {
